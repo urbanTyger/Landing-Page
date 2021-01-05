@@ -1,0 +1,254 @@
+@import "scrollbar.css";
+@import "animations.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Livvic', sans-serif;
+}
+
+body {
+    overflow: overlay;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+a {
+    text-decoration: none;
+    color: teal;
+}
+
+
+.full-container {
+    display: grid;
+    width: 100vw;
+    grid-template-rows: 100px auto 70px;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+.header-container {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(240, 223, 195, 0.973);
+    padding: 0 30px;
+    z-index: 99;
+}
+
+.burger-container {
+    display: none;
+}
+
+.logo-name {
+    margin-left: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    border: 0.5px solid lightgray;
+    background-color: rgb(255, 174, 0);
+    width: 70px;
+    height: 100%;
+    margin: auto 0;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+#menu-items {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu-item {
+    min-width: 130px;
+    text-align: center;
+    margin: 0 0 0 5px;
+    padding-left: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.menu-item.active a {
+    color: orange;
+}
+
+.menu-item a {
+    display: block;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.main-container {
+    position: relative;
+    grid-area: main;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 166, 0, 0.205);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+}
+
+.footer-container {
+    grid-area: footer;
+    background-color: rgba(240, 223, 195, 0.973);
+    padding: 15px;
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    color: rgba(156, 154, 154, 0.815);
+    height: 100vh;
+    font-size: 2em;
+    filter: saturate(25%);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: 1;
+}
+
+.section.collapse {
+    height: fit-content;
+}
+
+.information {
+    margin: 15px 0 0 5px;
+    font-size: 0.70em;
+    line-height: 1.5em;
+}
+
+div.information {
+    margin-top: 30px;
+    background-color: rgba(0, 128, 128, 0.527);
+    padding: 10px;
+}
+
+.information ul {
+    margin-left: 50px;
+}
+
+.collapse .information {
+    display: none;
+}
+
+.collapse .container {
+    height: fit-content;
+    margin: 50px auto;
+}
+
+.container {
+    width: 80vw;
+    margin: 50px auto;
+    padding: 30px;
+    z-index: 5;
+    position: relative;
+    background-color: whitesmoke;
+    height: fit-content;
+}
+
+.active-section {
+    position: relative;
+    filter: saturate(100%) !important;
+    color: black;
+    transition: color 1s;
+}
+
+.section-title {
+    cursor: pointer;
+    width: auto;
+}
+
+.active-section h2 {
+    padding-left: 20px;
+    border-left: 6px solid teal;
+    font-size: 1.6em;
+    text-transform: capitalize;
+    z-index: 5;
+    transition: padding-left 2s, filter 3s;
+    background: rgb(93, 129, 129);
+    background: linear-gradient(90deg, rgba(93, 129, 129, 0.6502976190476191) 0%, rgba(93, 129, 129, 0.37298669467787116) 47%, rgba(255, 255, 255, 0.08727240896358546) 100%);
+}
+
+.section-title::before {
+    content: " - ";
+}
+
+.collapse .section-title::before {
+    content: " + ";
+}
+
+#section-one {
+    background-image: url(../images/architecture-768432.jpg);
+}
+
+#section-two {
+    background-image: url(../images/chicago.jpg);
+}
+
+#section-three {
+    background-image: url(../images/storm-2930337_1920.jpg);
+}
+
+#section-four {
+    background-image: url(../images/dead-trees-947331_1920.jpg);
+}
+
+#section-five {
+    background-image: url(../images/alberta-2297204_1920.jpg);
+}
+
+#caret {
+    background-color: rgba(245, 245, 245, 0.774);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.507);
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    right: 35px;
+    bottom: 35px;
+    z-index: 5;
+    padding: 2px 2px 3px 2px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 2s ease;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#caret[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.753);
+    border-radius: 5px;
+    padding: 1px;
+    right: 25px;
+    width: 100px;
+    bottom: 0px;
+    font-size: 1em;
+    transform: scale(0);
+    transition: transform 150ms ease-in-out;
+    transition-delay: 1s;
+}
+
+#caret:hover[data-tooltip]::before {
+    transform: scale(1);
+    transition-delay: 0.1s;
+}

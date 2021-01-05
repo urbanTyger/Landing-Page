@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Project Landing Page">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Thomas Miller">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="icon" href="./images/buildings.svg" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>Our Future</title>
+</head>
+
+<body>
+    <div class="full-container">
+        <header class="header-container">
+            <a href="index.html" class="logo">
+                <img class="logo-image" src="./images/buildings.svg" alt="Building logo">
+                <span class="logo-name">
+                    <h1>Futurez</h1>
+                </span>
+            </a>
+            <nav class="main-menu">
+                <ul id="menu-items">
+                </ul>
+            </nav>
+            <span class="burger-container">
+                <img id="burger" onclick="openMenu()" src="./images/menu.svg" alt="burger menu">
+                <img id="burger-close" onclick="closeMenu()" src="./images/xmark.svg" alt="">
+            </span>
+        </header>
+        <main class="main-container overlay">
+            <section id="section-one" data-menu="OUr World" class="section active-section">
+                <div class="container">
+                    <h2 class="section-title">Our current world</h2>
+                    <p class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam enim
+                        doloremque molestiae ut
+                        fugiat,
+                        tempore exercitationem cupiditate quam quos, vero eaque, esse nisi blanditiis vitae suscipit.
+                        Sint
+                        dignissimos quo facilis.</p>
+                    <div class="information">
+                        Current Points to Notice
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="section-two" data-menu="Immense Growth" class="section">
+                <div class="container">
+                    <h2 class="section-title">Unprecedented population increase</h2>
+                    <p class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam enim
+                        doloremque molestiae ut
+                        fugiat,
+                        tempore exercitationem cupiditate quam quos, vero eaque, esse nisi blanditiis vitae suscipit.
+                        Sint
+                        dignissimos quo facilis.</p>
+                    <p class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam enim
+                        doloremque molestiae ut
+                        fugiat,
+                        tempore exercitationem cupiditate quam quos, vero eaque, esse nisi blanditiis vitae suscipit.
+                        Sint
+                        dignissimos quo facilis.</p>
+                    <div class="information">
+                        Handling the Growth
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="section-three" data-menu="devastation" class="section">
+                <div class="container">
+                    <h2 class="section-title">additional responsibility</h2>
+                    <p class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam enim
+                        doloremque molestiae ut
+                        fugiat,
+                        tempore exercitationem cupiditate quam quos, vero eaque, esse nisi blanditiis vitae suscipit.
+                        Sint
+                        dignissimos quo facilis.</p>
+                    <div class="information">
+                        Taking the Bull by the Horns
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="section-four" data-menu=" The Ashes" class="section">
+                <div class="container">
+                    <h2 class="section-title">Time is running out</h2>
+                    <p class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam enim
+                        doloremque molestiae ut
+                        fugiat,
+                        tempore exercitationem cupiditate quam quos, vero eaque, esse nisi blanditiis vitae suscipit.
+                        Sint
+                        dignissimos quo facilis.</p>
+                    <div class="information">
+                        Facts Cannot be Denied
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="section-five" data-menu="the rebirth" class="section">
+                <div class="container">
+                    <h2 class="section-title">Finding the Paradise Hidden</h2>
+                    <p class="information">If we stay consistent and no longer rely on the "old" ways to run our world,
+                        the chances still exist to reset our paradise to its wonderful state</p>
+                    <div class="information">
+                        Opportunities
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class=" footer-container">
+            <p>&copy 2020 Thomas Miller - Udacity Projects</p>
+        </footer>
+    </div>
+    <div id="caret" data-tooltip="Scroll to Top" onclick="toTop()"><img data-tooltip="Scroll to Top"
+            src="./images/up.svg" alt="up arrow">
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
