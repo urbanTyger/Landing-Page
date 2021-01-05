@@ -12,11 +12,6 @@ body {
     overflow: overlay;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-
 a {
     text-decoration: none;
     color: teal;

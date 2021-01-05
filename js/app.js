@@ -20,6 +20,7 @@ function createMenu(menuListData) {
     let tempHolder = {};
     for (sectionId of allSectionIds) {
         tempHolder['id'] = sectionId.id;
+        tempHolder['top'] = sectionId.getBoundingClientRect().top;
         tempHolder['menuName'] = sectionId.getAttribute("data-menu");
         menuListData.push(tempHolder);
         tempHolder = {};
@@ -57,7 +58,11 @@ function menuVanish(running) {
 
 //  Scroll to top of page for caret
 function toTop() {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    });
 }
 
 // Open the menu on mobile screens
@@ -81,6 +86,20 @@ function closeMenu() {
 }
 
 //-- EVENT LISTENERS --
+
+
+// Clicks on the menu will go to the related section
+menu.addEventListener("click", (click) => {
+    click.preventDefault();
+    let myTarget = click.target.nodeName;
+    if (myTarget === "A") {
+        let linkFound = click.target.href;
+        linkFound = linkFound.split('#');
+        document.getElementById(linkFound[1]).scrollIntoView({ behavior: 'smooth' })
+    } else if (myTarget === "H1") {
+        toTop();
+    };
+});
 
 // Collapse each section on click
 document.body.addEventListener("click", (collapse) => {
