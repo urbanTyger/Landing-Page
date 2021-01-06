@@ -25,11 +25,10 @@ function createMenu(menuListData) {
         menuListData.push(tempHolder);
         tempHolder = {};
     }
-
-    for (menuList of menuListData) {
-        menuItems.push(`<li class=\"menu-item ${menuList.id}\"><a href=\"#${menuList.id}\">${menuList.menuName}</a></li>`);
-    }
-    newMenu.innerHTML += menuItems.join("");
+    menuListData.forEach(menuItem => {
+        menuItems += (`<li class=\"menu-item ${menuItem.id}\"><a href=\"#${menuItem.id}\">${menuItem.menuName}</a></li>`);
+    });
+    newMenu.innerHTML += menuItems;
 }
 
 
